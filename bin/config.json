@@ -1,0 +1,32 @@
+{
+  "rewards": {
+    "cycle": 7,
+    "coins": [100, 200, 300, 500, 800, 1000, 2000],
+    "gems": [5, 7, 10, 15, 20, 25, 50],
+    "pattern": ["COINS", "GEMS", "COINS", "GEMS", "COINS", "GEMS", "COINS"],
+    "types": {
+      "COINS": {
+        "icon": "coin_icon.png",
+        "label": "Coins",
+        "description": "Basic in-game currency.",
+        "rarity": "common"
+      },
+      "GEMS": {
+        "icon": "gem_icon.png",
+        "label": "Gems",
+        "description": "Premium currency.",
+        "rarity": "rare"
+      }
+    }
+  },
+  "ui": {
+    "cardWidth": 70,
+    "cardHeight": 100,
+    "spacing": 10,
+    "colors": {
+      "background": 3355443,
+      "coins": 16766720,
+      "gems": 65535
+    }
+  }
+}
