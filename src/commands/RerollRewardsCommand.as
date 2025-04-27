@@ -1,13 +1,16 @@
-package models
+package commands
 {
 	import commands.BaseCommand;
 	import commands.constants.CommandResult;
 	import facades.App;
 	import models.RewardModel;
 	import providers.GameProvider;
+	import models.ModelsNamespace;
 
 	public class RerollRewardsCommand extends BaseCommand
 	{
+		use namespace ModelsNamespace;
+
 		private var _provider:GameProvider;
 		private var _rewardModel:RewardModel;
 

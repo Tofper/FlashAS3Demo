@@ -1,7 +1,7 @@
 package viewmodels
 {
-	import models.ClaimRewardCommand;
-	import models.RerollRewardsCommand;
+	import commands.ClaimRewardCommand;
+	import commands.RerollRewardsCommand;
 	import events.ViewModelEvent;
 	import facades.App;
 	import flash.events.Event;

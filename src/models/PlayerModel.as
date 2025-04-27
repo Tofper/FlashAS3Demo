@@ -36,4 +36,4 @@ package models
             dispatchEvent(new Event(CURRENCY_CHANGED));
         }
     }
-} 
+}

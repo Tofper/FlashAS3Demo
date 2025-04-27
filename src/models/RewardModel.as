@@ -5,9 +5,12 @@ package models
 	import flash.events.EventDispatcher;
 	import models.types.RewardData;
 	import models.types.RewardState;
+	import models.ModelsNamespace;
 
 	public class RewardModel extends EventDispatcher
 	{
+		use namespace ModelsNamespace;
+
 		private var _rewards:Vector.<RewardData>;
 		private var _rerollCount:int = 0;
 		private var _maxRerolls:int = 0;
@@ -65,7 +68,7 @@ package models
 		 * Internal method to perform reroll - exposed for Commands to use.
 		 * @return Boolean indicating if reroll was successful.
 		 */
-		internal function executeReroll():Boolean
+		ModelsNamespace function executeReroll():Boolean
 		{
 			if (!canReroll) return false;
 
@@ -80,7 +83,7 @@ package models
 		 * Internal method to claim a reward - exposed for Commands to use.
 		 * @return An object with claim result.
 		 */
-		internal function executeClaimReward(day:int):Object
+		ModelsNamespace function executeClaimReward(day:int):Object
 		{
 			// Validate currentDay does not exceed rewards length
 			if (_currentDay > _rewards.length)

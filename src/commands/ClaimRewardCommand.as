@@ -1,4 +1,4 @@
-package models
+package commands
 {
 	import commands.BaseCommand;
 	import commands.constants.CommandResult;
@@ -8,9 +8,11 @@ package models
 	import models.types.RewardData;
 	import models.types.RewardTypes;
 	import providers.GameProvider;
+	import models.ModelsNamespace;
 
 	public class ClaimRewardCommand extends BaseCommand
 	{
+		use namespace ModelsNamespace;
 		private var _day:int;
 
 		public function ClaimRewardCommand(day:int)
