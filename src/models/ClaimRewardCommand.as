@@ -1,6 +1,7 @@
 package models
 {
 	import commands.BaseCommand;
+	import commands.ICommandProps;
 	import commands.constants.CommandResult;
 	import facades.App;
 	import managers.AnimationManager;
@@ -16,11 +17,13 @@ package models
 		private var _animationManager:AnimationManager;
 		private var _day:int;
 
-		public function ClaimRewardCommand(args:Object)
+		public function ClaimRewardCommand(props:ICommandProps)
 		{
 			_provider = App.provider;
 			_animationManager = App.animationManager;
-			_day = args.day;
+			var claimProps:ClaimCommandProps = props as ClaimCommandProps;
+			if (!claimProps) throw new Error("Invalid props for ClaimRewardCommand");
+			_day = claimProps.day;
 		}
 
 		override public function execute():String

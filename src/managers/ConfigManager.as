@@ -47,11 +47,13 @@ package managers
 				}
 				catch (err:Error)
 				{
+					trace("[ConfigManager] Error parsing JSON from " + url + ": " + err.message);
 					if (onError != null) onError(err);
 				}
 			});
 			loader.addEventListener(IOErrorEvent.IO_ERROR, function(e:IOErrorEvent):void
 			{
+				trace("[ConfigManager] IOError while loading config from " + url + ": " + e.text);
 				if (onError != null) onError(e);
 			});
 			loader.load(new URLRequest(url));

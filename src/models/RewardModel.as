@@ -82,6 +82,11 @@ package models
 		 */
 		internal function executeClaimReward(day:int):Object
 		{
+			// Validate currentDay does not exceed rewards length
+			if (_currentDay > _rewards.length)
+			{
+				return {status: CLAIM_INVALID_DAY, reward: null};
+			}
 			// Validate day index
 			if (day < 0 || day >= _rewards.length)
 			{
