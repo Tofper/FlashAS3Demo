@@ -1,7 +1,6 @@
 package managers
 {
 	import commands.ICommand;
-	import commands.ICommandProps;
 
 	/**
 	 * CommandManager executes ICommand instances and keeps a history of executed commands.
@@ -22,25 +21,14 @@ package managers
 
 		/**
 		 * Executes a command and stores it in the history.
-		 * @param command class to execute.
-		 * @param props The ICommandProps to pass to the command's constructor.
+		 * @param command ICommand instance to execute.
 		 * @return The result of the command's execute method.
 		 */
-		public function execute(commandClass:Class, props:ICommandProps = null):String
+		public function execute(command:ICommand):String
 		{
-			var commandInstance:ICommand;
-			if (props !== null)
-			{
-				commandInstance = new commandClass(props);
-			}
-			else
-			{
-				commandInstance = new commandClass();
-			}
+			var result:String = command.execute();
 
-			var result:String = commandInstance.execute();
-
-			_history.push(commandInstance);
+			_history.push(command);
 			if (_history.length > _maxHistory)
 			{
 				_history.shift();

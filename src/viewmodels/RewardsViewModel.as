@@ -13,7 +13,6 @@ package viewmodels
 	import providers.GameProvider;
 	import managers.ConfigManager;
 	import viewmodels.RewardCardModel;
-	import models.ClaimCommandProps;
 
 	public class RewardsViewModel extends BaseViewModel
 	{
@@ -82,14 +81,13 @@ package viewmodels
 		{
 			if (canReroll)
 			{
-				_commandManager.execute(RerollRewardsCommand);
+				_commandManager.execute(new RerollRewardsCommand());
 			}
 		}
 
 		public function claimReward(day:int):void
 		{
-			var props:ClaimCommandProps = new ClaimCommandProps(day);
-			_commandManager.execute(ClaimRewardCommand, props);
+			_commandManager.execute(new ClaimRewardCommand(day));
 		}
 
 		// Cleanup
