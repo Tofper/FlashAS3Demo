@@ -19,7 +19,6 @@ package managers
 	 */
 	public class ConfigManager
 	{
-		private static var _instance:ConfigManager;
 		private var _config:Object;
 		private var _rewardMetaById:Object = {};
 

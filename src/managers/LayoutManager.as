@@ -19,7 +19,6 @@ package managers
 		public static const LAYOUT_MOBILE:String = "mobile";
 		public static const LAYOUT_NORMAL:String = "normal";
 
-		private static var _instance:LayoutManager;
 		private var _currentLayout:String;
 		private var _stage:Stage;
 
